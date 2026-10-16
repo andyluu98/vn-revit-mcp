@@ -1,0 +1,39 @@
+[project]
+name = "vn-revit-mcp"
+version = "0.1.0"
+description = "MCP server tiếng Việt cho Autodesk Revit qua pyRevit: thống kê, khối lượng, xuất Excel"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+keywords = ["revit", "pyrevit", "mcp", "bim", "xay-dung", "khoi-luong"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: Microsoft :: Windows",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "mcp>=2.3,<3",
+    "openpyxl>=3.1,<4",
+]
+
+[project.scripts]
+vn-revit-mcp = "vn_revit_mcp.server:main"
+
+[project.urls]
+Homepage = "https://github.com/andyluu98/vn-revit-mcp"
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/vn_revit_mcp"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
