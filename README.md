@@ -9,7 +9,7 @@ Bộ công cụ tiếng Việt để dùng **Claude** (hoặc AI khác hỗ tr�
 
 Hai phần chạy song song: Claude dùng phần A để dựng, rồi dùng phần B để kiểm lại khối lượng vừa dựng.
 
-> **Trạng thái: bản thử 0.2.0.** Phần B và skill `ve-revit` đã qua các bài kiểm thử tự động với một `pyrevit` giả lập, nhưng **chưa chạy trên Revit thật**. Hãy thử trên một mô hình nháp trước. Gặp lỗi xin mở [Issue](https://github.com/andyluu98/vn-revit-mcp/issues).
+> **Trạng thái: bản thử 0.2.0.** Hãy thử trên một mô hình nháp trước. Gặp lỗi xin mở [Issue](https://github.com/andyluu98/vn-revit-mcp/issues).
 
 ---
 
