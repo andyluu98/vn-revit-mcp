@@ -14,7 +14,13 @@ Xin **không** mở Issue công khai cho lỗ hổng bảo mật. Dùng tính n�
 - Excel chỉ ghi vào thư mục tuyệt đối trên máy, không ghi đường dẫn mạng, không ghi đè file có sẵn.
 - Công cụ sửa mô hình mặc định chạy thử. Chạy thật vẫn cần người dùng bấm Giữ trong Revit (chế độ `ask` của pyRevit).
 
+## Phần vẽ (MCP của pyRevit và skill ve-revit)
+
+- Phần vẽ dùng MCP có sẵn của pyRevit: AI viết code Python và chạy trong Revit qua `run_query`, `run_modify`. Đây là thiết kế của pyRevit, không thuộc mã nguồn repo này.
+- Skill `ve-revit` chỉ là hướng dẫn bằng chữ và dữ liệu mẫu. Skill yêu cầu chạy thử trước, giữ chế độ `ask`, không đề nghị chế độ `auto`.
+- Lệnh `vn-revit-mcp cai-skill` chỉ chép file của gói vào thư mục skill; bản cũ được chuyển vào `Documents\vn-revit-mcp\_backup`, không xóa.
+
 ## Giới hạn
 
-- Bảo vệ của pyRevit (hoàn tác, duyệt) chỉ bảo vệ mô hình, không phải hộp cát cho Python. Xem `docs/agent-runtime.md` của pyRevit.
+- Bảo vệ của pyRevit (hoàn tác, duyệt) chỉ bảo vệ mô hình, không phải hộp cát cho Python: code do AI viết có quyền như tài khoản Windows của người dùng. Xem `docs/agent-runtime.md` của pyRevit.
 - Dữ liệu mô hình mà công cụ trả về được gửi tới nhà cung cấp mô hình AI của người dùng.

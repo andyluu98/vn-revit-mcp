@@ -1,7 +1,7 @@
 [project]
 name = "vn-revit-mcp"
-version = "0.1.0"
-description = "MCP server tiếng Việt cho Autodesk Revit qua pyRevit: thống kê, khối lượng, xuất Excel"
+version = "0.2.0"
+description = "MCP server tiếng Việt cho Autodesk Revit qua pyRevit: thống kê, khối lượng, xuất Excel, skill dựng mô hình"
 readme = "README.md"
 license = "MIT"
 license-files = ["LICENSE"]

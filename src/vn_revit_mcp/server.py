@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import asyncio
 import os
+import sys
 from typing import Any, Callable
 
 from mcp.server.mcpserver import MCPServer
@@ -26,6 +27,8 @@ Quy tắc:
 - dat_tham_so sửa mô hình: mặc định chỉ chạy thử (dry_run). Chỉ chạy thật khi người dùng đồng ý rõ ràng;
   khi đó Revit còn hiện hộp duyệt Giữ/Hủy để người dùng quyết định.
 - Mọi công cụ nhận tham số tùy chọn 'revit' (năm, ví dụ "2025", hoặc số process) khi mở nhiều Revit.
+- Vẽ, dựng mô hình (tường, sàn, cửa...): vn-revit-mcp không vẽ. Dùng MCP của pyRevit (run_modify)
+  theo skill ve-revit, rồi quay lại đây kiểm khối lượng.
 """
 
 mcp = MCPServer(name="vn-revit-mcp", instructions=INSTRUCTIONS, version=__version__)
@@ -236,6 +239,9 @@ async def dat_tham_so(ids: list[int], tham_so: str, gia_tri: str, chay_thu: bool
 
 
 def main() -> None:
+    if len(sys.argv) > 1 and sys.argv[1] == "cai-skill":
+        from . import cai_skill
+        sys.exit(cai_skill.main(sys.argv[2:]))
     mcp.run("stdio")
 
 
